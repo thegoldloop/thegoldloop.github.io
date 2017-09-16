@@ -2,11 +2,13 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
   <body>
-    {% include header.html %}
+      <div class="uk-offcanvas-content">
+        {% include header.html %}
+        {{ content }}
+        {% include footer.html %}
+        {% include offcanvas.html %}
 
-    {{ content }}
-
-    {% include footer.html %}
+      </div>
     {% include script.html %}
   </body>
 </html>

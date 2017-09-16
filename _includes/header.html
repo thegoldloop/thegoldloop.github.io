@@ -19,20 +19,23 @@
     <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 100">
       <nav class="uk-navbar-container">
         <div class="uk-container uk-container-expand">
-          <div uk-navbar>
+
+          <!-- Regular Menu -->
+          <div uk-navbar class="uk-visible@m">
             <div class="uk-navbar-center">
               <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#">HOME</a></li>
-                <li><a href="#">LOOP</a></li>
-                <li><a href="#">TESTIMONIALS</a></li>
-                <li><a href="#">BLOG</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                {% for path in page_paths %} {% assign my_page = site.pages | where: "path", path | first %} {% if my_page.title %}
-                <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-                {% endif %} {% endfor %}
+                {% include menu-items.html %}
               </ul>
             </div>
           </div>
+
+          <!-- Burger Menu -->
+          <div uk-navbar class="uk-hidden@m">
+            <div class="uk-navbar-left">
+              <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle href="#offcanvas"></a>
+            </div>
+          </div>
+
         </div>
       </nav>
     </div>
