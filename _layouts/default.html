@@ -2,6 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
   <body>
+    <div class="uk-container">
       <div class="uk-offcanvas-content">
         {% include header.html %}
         {{ content }}
@@ -9,6 +10,7 @@
         {% include offcanvas.html %}
 
       </div>
+    </div>
     {% include script.html %}
   </body>
 </html>

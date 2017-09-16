@@ -73,33 +73,16 @@
     </div>
 
     <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
-      <div>
-        <div class="uk-inline">
-          <img src="https://images.unsplash.com/photo-1450740199001-78e928502994?dpr=1&auto=format&fit=crop&w=1500&h=994&q=80&cs=tinysrgb&crop="
-            alt="">
-          <div class="uk-overlay uk-overlay-default uk-position-bottom">
-            <p>Budget Deals for Your Wedding Meals</p>
+      {% for post in site.categories['blog'] limit:3 offset:1 %}
+        <div>
+          <div class="uk-inline">
+            <img src="{{ post.img }}" alt="">
+            <div class="uk-overlay uk-overlay-default uk-position-bottom">
+              <p>{{ post.title | escape }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="uk-inline">
-          <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?dpr=1&auto=format&fit=crop&w=1500&h=1079&q=80&cs=tinysrgb&crop="
-            alt="">
-          <div class="uk-overlay uk-overlay-default uk-position-bottom">
-            <p>Budget Deals for Your Wedding Rings</p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="uk-inline">
-          <img src="https://images.unsplash.com/photo-1483908514687-d25c79c15df0?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="
-            alt="">
-          <div class="uk-overlay uk-overlay-default uk-position-bottom">
-            <p>Wedding Invitation Inspiration Information</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

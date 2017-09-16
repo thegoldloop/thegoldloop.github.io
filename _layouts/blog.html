@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="uk-grid">
+  <!-- Left Column -->
+  <div class="uk-width-3-4@m uk-margin-top">
+      {% for post in site.categories['blog'] %}
+        <article class="uk-article">
+          <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a></h1>
+          <p class="uk-article-meta">Written by <a href="#">{{ post.author | escape }}</a> on {{ post.date | date: "%b %-d, %Y" }}. Tags: {{ post.tags | array_to_sentence_string }} </p>
+
+          {% if post.img != null %}
+          <p><img src="{{ post.img }}"></p>
+          {% endif %}
+
+          <p class="uk-text-lead">{{ post.content | strip_html | truncatewords: 30 }}</p>
+
+          <div class="uk-grid-small uk-child-width-auto" uk-grid>
+            <div>
+              <a class="uk-button uk-button-text" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            </div>
+            <div>
+              <a class="uk-button uk-button-text" href="#">5 Comments</a>
+            </div>
+          </div>
+        </article>
+      {% else %}
+        <div class="uk-text-center">
+          <h3>No posts found.</h3>
+        </div>
+      {% endfor %}
+
+      <ul class="uk-pagination uk-margin-bottom">
+        <li><a href="#"><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>
+        <li class="uk-margin-auto-left"><a href="#">Next <span class="uk-margin-small-left" uk-pagination-next></span></a></li>
+      </ul>
+  </div>
+
+  <!-- Right Column -->
+  <div class="uk-width-1-4@m uk-text-center">
+    {% include misc-panel.html %}
+  </div>
+</div>
