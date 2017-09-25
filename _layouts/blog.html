@@ -4,7 +4,7 @@ layout: default
 <div class="uk-grid">
   <!-- Left Column -->
   <div class="uk-width-3-4@m uk-margin-top">
-      {% for post in site.categories['blog'] %}
+      {% for post in paginator.posts %}
         <article class="uk-article">
           <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a></h1>
           <p class="uk-article-meta">Written by <a href="#">{{ post.author | escape }}</a> on {{ post.date | date: "%b %-d, %Y" }}. Tags: {{ post.tags | array_to_sentence_string }} </p>
@@ -32,10 +32,17 @@ layout: default
         </div>
       {% endfor %}
 
-      <ul class="uk-pagination uk-margin-bottom">
-        <li><a href="#"><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>
-        <li class="uk-margin-auto-left"><a href="#">Next <span class="uk-margin-small-left" uk-pagination-next></span></a></li>
-      </ul>
+      {% if paginator.next_page or paginator.previous_page %}
+        <ul class="uk-pagination uk-margin-bottom">
+          {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path }}"><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>
+          {% endif %}
+
+          {% if paginator.next_page %}
+            <li class="uk-margin-auto-left"><a href="{{ paginator.next_page_path }}">Next <span class="uk-margin-small-left" uk-pagination-next></span></a></li>
+          {% endif %}
+        </ul>
+      {% endif %}
   </div>
 
   <!-- Right Column -->

@@ -29,10 +29,14 @@ plugins:
   - jekyll-feed
   - jekyll-sass-converter
   - jekyll-seo-tag
+  - jekyll-paginate
 
 sass:
   sass_dir: assets/css/_sass
   style: compressed
+
+paginate: 2
+paginate_path: /blog/page/:num/
 
 ### CONTACT SETTINGS ###
 country: Philippines
