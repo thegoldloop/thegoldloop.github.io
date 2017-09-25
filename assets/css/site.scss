@@ -1,0 +1,22 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// site.scss
+// Better to check https://getuikit.com/docs/sass for reference.
+
+// 1. Your custom variables and variable overwrites.
+@import "theme/variables.scss";
+// @import "theme/accordion.scss";
+// ... import all
+
+// 2. Import default variables and available mixins.
+@import "uikit/src/scss/variables.scss";
+@import "uikit/src/scss/mixins.scss";
+
+// 3. Your custom mixin overwrites.
+// @import "theme/accordion-mixins.scss";
+// ... import all
+
+// 4. Import UIkit
+@import "uikit/src/scss/uikit.scss";

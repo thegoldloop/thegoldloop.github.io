@@ -27,6 +27,11 @@ markdown: kramdown
 permalink: pretty
 plugins:
   - jekyll-feed
+  - jekyll-sass-converter
+
+sass:
+  sass_dir: assets/css/_sass
+  style: compressed
 
 ### CONTACT SETTINGS ###
 country: Philippines
