@@ -28,6 +28,7 @@ permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-sass-converter
+  - jekyll-seo-tag
 
 sass:
   sass_dir: assets/css/_sass
