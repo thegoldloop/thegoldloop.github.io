@@ -7,7 +7,7 @@ title: Contact Us
   <!-- Left Column -->
   <div class="uk-width-3-4@m uk-margin-top">
     <h1>Talk to Us</h1>
-    <form class="uk-form-stacked" method="POST" action="http://formspree.io/support@thegoldloop.com">
+    <form class="uk-form-stacked" method="POST" action="https://formspree.io/support@thegoldloop.com">
       <div class="uk-margin">
         <label class="uk-form-label" for="form-stacked-text">Name</label>
         <div class="uk-form-controls">
