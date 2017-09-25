@@ -1,0 +1,39 @@
+---
+layout: default
+title: Contact Us
+---
+
+<div class="uk-grid">
+  <!-- Left Column -->
+  <div class="uk-width-3-4@m uk-margin-top">
+    <h1>Talk to Us</h1>
+    <form class="uk-form-stacked" method="POST" action="http://formspree.io/support@thegoldloop.com">
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-text">Name</label>
+        <div class="uk-form-controls">
+          <input class="uk-input" type="text" name="name" placeholder="Your name"/>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-text">E-Mail</label>
+        <div class="uk-form-controls">
+          <input class="uk-input" type="email" name="email" placeholder="Your e-mail address"/>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-text">Message</label>
+        <div class="uk-form-controls">
+          <textarea class="uk-textarea" name="message" placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <input type="submit" value="SEND" class="uk-button uk-button-primary"/>
+      </div>
+    </form>
+  </div>
+
+  <!-- Right Column -->
+  <div class="uk-width-1-4@m uk-text-center">
+    {% include misc-panel.html %}
+  </div>
+</div>
