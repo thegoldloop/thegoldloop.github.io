@@ -8,6 +8,10 @@ title: Contact Us
   <div class="uk-width-3-4@m uk-margin-top">
     <h1>Talk to Us</h1>
     <form class="uk-form-stacked" method="POST" action="https://formspree.io/support@thegoldloop.com">
+      <!-- TODO 
+      <input type="hidden" name="_next" value="//site.io/thanks.html" />
+      <input type="hidden" name="_subject" value="New submission!" />
+      -->
       <div class="uk-margin">
         <label class="uk-form-label" for="form-stacked-text">Name</label>
         <div class="uk-form-controls">
