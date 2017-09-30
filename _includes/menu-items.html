@@ -1,9 +1,9 @@
 <li {% if page.title == "Home" %}class="uk-active"{% endif %}><a href="{{"/" | prepend: site.baseurl }}">HOME</a></li>
-<li {% if page.title == "Loop" %}class="uk-active"{% endif %}><a href="{{"/loop/" | prepend: site.baseurl }}">LOOP</a></li>
-<li {% if page.title == "Testimonials" %}class="uk-active"{% endif %}><a href="{{"/testimonials/" | prepend: site.baseurl }}">TESTIMONIALS</a></li>
 <li {% if page.title == "Blog" %}class="uk-active"{% endif %}><a href="{{"/blog/" | prepend: site.baseurl }}">BLOG</a></li>
 <li {% if page.title == "About" %}class="uk-active"{% endif %}><a href="{{"/about/" | prepend: site.baseurl }}">ABOUT</a></li>
 <li {% if page.title == "Contact Us" %}class="uk-active"{% endif %}><a href="{{"/contact/" | prepend: site.baseurl }}">CONTACT US</a></li>
 {% for path in page_paths %} {% assign my_page = site.pages | where: "path", path | first %} {% if my_page.title %}
 <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
 {% endif %} {% endfor %}
+
+

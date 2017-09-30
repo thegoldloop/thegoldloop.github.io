@@ -2,29 +2,16 @@
 layout: default
 ---
 
-<div class="uk-container">
-    
-      <div class="uk-grid">
-        <!-- Left Column -->
-        <div class="uk-width-3-4@m uk-margin-top">
-          <article class="uk-article">
-            <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ page.url | prepend: site.baseurl }}">{{ page.title | escape }}</a></h1>
-            <p class="uk-article-meta">Written by <a href="#">{{ page.author | escape }}</a> on {{ page.date | date: "%b %-d, %Y" }}. Tags: {{ page.tags | array_to_sentence_string }} </p>
+<section class="uk-section uk-section-default uk-section-xsmall">
+  <article class="uk-article">
+    <h1 class="uk-article-title"><a class="uk-link-reset" href="{{ page.url | prepend: site.baseurl }}">{{ page.title | escape }}</a></h1>
+    <p class="uk-article-meta">Written by <a href="#">{{ page.author | escape }}</a> on {{ page.date | date: "%b %-d, %Y" }}. Tags: {{ page.tags | array_to_sentence_string }} </p>
 
-            {% if page.img != null %}
-            <p><img src="{{ page.img }}"></p>
-            {% endif %}
+    {% if page.img != null %}
+    <p><img src="{{ page.img }}"></p>
+    {% endif %}
 
-            {{ content }}
-            {% include disqus_comments.html %}
-          </article>
-        </div>
-    
-        <!-- Right Column -->
-        <div class="uk-width-1-4@m uk-text-center">
-          {% include misc-panel.html %}
-        </div>
-      </div>
-    
-    </div>
-    
+    {{ content }}
+    {% include disqus_comments.html %}
+  </article>    
+</section>

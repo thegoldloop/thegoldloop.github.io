@@ -1,22 +1,32 @@
-{% include mailchimp.html %}
-<hr class="uk-divider-icon">
+<div class="uk-container uk-text-center">
+  <div class="uk-section-xsmall uk-section-default">
+    {% include mailchimp.html %}
+  </div>
+  
+  <div class="uk-section-xsmall uk-section-default">
+    <h5 class="uk-text-uppercase uk-margin-remove-bottom">Follow us on</h5>
+    <div class="uk-margin-small-top">
+      {% for network in site.social %}
+        <a uk-icon="icon: {{ network.title }}; ratio: 1" href="{{ network.url }}" class="uk-padding-xsmall"></a>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <!-- <div class="uk-section-xsmall uk-section-default">
+    <h5 class="uk-text-uppercase uk-margin-remove-bottom">Tags</h5>
 
-<h3>FOLLOW US ON</h3>
-{% for network in site.social %}
-  <a uk-icon="icon: {{ network.title }}; ratio: 2" href="{{ network.url }}"></a>
-{% endfor %}
-<hr class="uk-divider-icon">
-
-<h3>TAGS</h3>
-<a class="uk-button uk-button-default uk-button-small" href="#">TIPS</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">HACKS</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">STYLE</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">TAG</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">DRESS</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">GROOM</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">RECEPTION</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">INVITATION</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">CAKE</a>
-<a class="uk-button uk-button-default uk-button-small" href="#">BRIDE</a>
-
-<hr class="uk-divider-icon">
+    <div class="uk-margin-small-top">
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">TIPS</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">HACKS</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">STYLE</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">TAG</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">DRESS</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">GROOM</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">RECEPTION</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">INVITATION</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">CAKE</a>
+      <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">BRIDE</a>
+    </div>
+    
+  </div> -->
+</div>

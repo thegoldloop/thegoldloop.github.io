@@ -5,6 +5,7 @@ date: 2017-07-10 15:50:00
 author: Sample Author
 categories:
 - blog
+- popular
 tags:
 - Bride
 img: https://images.unsplash.com/photo-1471895302488-5ce150f3a1ba?dpr=1&auto=format&fit=crop&w=1500&h=1192&q=80&cs=tinysrgb&crop=

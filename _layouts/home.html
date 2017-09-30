@@ -1,38 +1,43 @@
 ---
 layout: default
 ---
-{% for post in site.categories['blog'] limit:1 %}
-  <div class="uk-section uk-section-media uk-light uk-background-cover uk-height-large" style="background-image: url({{ post.img }})">
-    <div class="uk-container uk-text-center">
-      {% for tag in post.tags %}
-        <a class="uk-button uk-button-primary uk-button-small" href="#">{{ tag }}</a>
-      {% endfor %}
 
-      <h2>{{ post.title | escape }}</h2>
-      <h3>by {{ post.author | escape }} on {{ post.date | date: "%b %-d, %Y" }}</h3>
-      <a class="uk-button uk-button-default" href="{{ post.url | prepend: site.baseurl }}">Read Full Story</a>
+<section class="uk-section uk-section-default uk-section-xsmall">
+  <div class="uk-container">
+    <h5 class="uk-text-uppercase">Popular Posts</h5>
 
-      <div class="uk-margin-top">
-        {% for network in site.social %}
-          <a uk-icon="icon: {{ network.title }}; ratio: 1.5" href="{{ network.url }}"></a>
-        {% endfor %}
+    <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+      {% for post in site.categories['popular'] limit:6 offset:1 %}
+      <div>
+        <div class="uk-tile uk-cover-container uk-height-small">
+          <img src="{{ post.img }}" alt="" uk-cover>
+          <div class="uk-overlay uk-light uk-position-cover"></div>
+          <div class="uk-overlay uk-light uk-position-bottom uk-padding-small">
+            <h5 class="uk-height-1-1">{{ post.title | escape }}</h5>
+          </div>
+        </div>
       </div>
-
+      {% endfor %}
     </div>
   </div>
-{% endfor %}
+</section>
 
-<!-- Start of Two Columns-->
-<div class="uk-child-width-1-3@m" uk-grid>
-  <!-- Start of Posts-->
-  <div class="uk-width-expand@m">
-    {% include home-post.html %}
-  </div>
-  <!-- End of Posts-->
+<section class="uk-section uk-section-default uk-section-xsmall">
+  <div class="uk-container">
+    <h5 class="uk-text-uppercase">Recent Posts</h5>
 
-  <!-- Start of Ads Column-->
-  <div class="uk-width-1-3@m uk-text-center">
-    {% include misc-panel.html %}
+    <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+      {% for post in site.categories['blog'] limit:3 offset:1 %}
+      <div>
+        <div class="uk-tile uk-cover-container uk-height-small">
+          <img src="{{ post.img }}" alt="" uk-cover>
+          <div class="uk-overlay uk-light uk-position-cover"></div>
+          <div class="uk-overlay uk-light uk-position-bottom uk-padding-small">
+            <h5 class="uk-height-1-1">{{ post.title | escape }}</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  <!-- End of Ads-->
-</div>
+</section>

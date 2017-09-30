@@ -1,0 +1,25 @@
+{% for post in site.categories['blog'] limit:1 %}
+  <div class="uk-section uk-section-media uk-light uk-background-cover uk-padding uk-padding-remove-horizontal" style="background-image: url({{ post.img }})">
+    <div class="uk-container uk-text-center">
+      <div class="gl-tag-container">
+        {% for tag in post.tags %}
+          <a class="uk-button uk-button-primary uk-button-small gl-tag" href="#">{{ tag }}</a>
+        {% endfor %}
+      </div>
+
+      <div class="gl-featured-title">
+        <h1>{{ post.title | escape }}</h1>
+        <div class="gl-article-meta uk-margin-small uk-text-meta"><span>by {{ post.author | escape }} on {{ post.date | date: "%b %-d, %Y" }}</span></div>
+      </div>
+
+      <a class="uk-button uk-button-default" href="{{ post.url | prepend: site.baseurl }}">Read Full Story</a>
+
+      <div class="uk-margin-top ">
+        {% for network in site.social %}
+          <a uk-icon="icon: {{ network.title }}; ratio: 1.5" href="{{ network.url }}" class="uk-padding-small"></a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+{% endfor %}
